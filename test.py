@@ -1,8 +1,5 @@
-from argument import testArguments
 import numpy as np
 from Utils.environment import Environment
-
-seed = 11037
 
 
 def test(agent, env, total_episodes=30):
@@ -22,16 +19,3 @@ def test(agent, env, total_episodes=30):
         rewards.append(episode_reward)
     print('Run %d episodes'%(total_episodes))
     print('Mean:', np.mean(rewards))
-
-
-def run(args):
-    if args.test:
-        env = Environment('BreakoutNoFrameskip-v4', args, atari_wrapper=True, test=True)
-        from agent_dir.agent_dqn import Agent_DQN
-        agent = Agent_DQN(env, args)
-        test(agent, env, total_episodes=20)
-
-
-if __name__ == '__main__':
-    args = testArguments()
-    run(args)

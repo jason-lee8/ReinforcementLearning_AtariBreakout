@@ -27,15 +27,13 @@ The project is derived from an assignment of the course [ADLxMLDS](https://www.c
 
 
 ## Requirements
-
-The follow packages are required, you can install them with `pip3 install [package]`
-
-- opencv-python
 - gym
 - gym[atari]
 - tensorflow
 - keras
-- scipy
+- h5py
+- numpy
+- pickle (optional)
 
 
 ## Setup

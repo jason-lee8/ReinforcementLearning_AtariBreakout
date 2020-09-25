@@ -7,6 +7,11 @@ Here is an example of the network playing Atari Breakout:
 <img src="example.gif">
 </p>
 
+This is an example of the network playing before training:
+<p align="center"> 
+<img src="pre_training.gif">
+</p>
+
 ## Requirements
 - gym
 - gym[atari]

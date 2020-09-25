@@ -1,7 +1,6 @@
-import argparse
 from test import test
 from Utils.environment import Environment
-from argument import trainArguments
+from argument import Arguments
 from agent_dir.agent_dqn import Agent_DQN
 
 
@@ -16,9 +15,9 @@ def run(args):
     if args.test:
         env = Environment('BreakoutNoFrameskip-v4', args, atari_wrapper=True, test=True)
         agent = Agent_DQN(env, args)
-        test(agent, env, total_episodes=100)
+        test(agent, env, total_episodes=arg.testEpisodes)
 
 
 if __name__ == '__main__':
-    args = trainArguments()
+    args = Arguments()
     run(args)

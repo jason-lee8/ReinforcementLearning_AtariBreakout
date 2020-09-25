@@ -1,5 +1,5 @@
 # Deep-Q-Network--Breakout
-Used Keras to implement a Deep-Q-Network that can beat humans at Atari Breakout.
+I used Keras to implement a Deep-Q-Network that can play Atari Breakout at an above human-level performance.
 
 ## Demo
 Here is an example of the network playing Atari Breakout:
@@ -7,12 +7,12 @@ Here is an example of the network playing Atari Breakout:
 <img src="example.gif">
 </p>
 
-This is an example of the network playing before training:
+Here is an animation of the network playing towards the start of the training process:
 <p align="center"> 
 <img src="pre_training.gif">
 </p>
 
-## Requirements
+## Requirements to run
 - gym
 - gym[atari]
 - tensorflow

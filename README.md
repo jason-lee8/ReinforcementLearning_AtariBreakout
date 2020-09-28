@@ -61,7 +61,7 @@ Here is an example of the network playing Atari Breakout:
 
 This is my favorite animation. It shows how big of an impact the discount factor has on the algorithm. As you can see, the agent aims to get the ball stuck on top of the blocks. It blows my mind that using this algorithm, the agent actually became smart!
 <p allign="center">
-<img src="https://thumbs.gfycat.com/TiredScratchyBat-size_restricted.gif">
+<img src="smart_breakout.gif">
 </p>
 
 ## Requirements to run

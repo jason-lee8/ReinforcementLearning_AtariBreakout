@@ -65,6 +65,7 @@ This is my favorite animation. It shows how big of an impact the discount factor
 </p>
 
 ## Requirements to run
+Install these python libraries before running.
 - gym
 - gym[atari]
 - tensorflow

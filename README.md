@@ -46,7 +46,7 @@ The actual network learns this new Q-value by subtracting the old prediction by 
 
 After many, many steps, the agent will be learn to maxamize the reward by abusing the law of large numbers. This is because as experience in the memory increases, any stochastisity in the envrionment will become apparent. Thus, the agent will learn the state-transition probabilities (if I take action, a, in state, s, what is the probability it will land me in state, s'). 
 
-However, my computer kept crashing at around 650,000 steps.
+Sadly, my computer kept crashing at around 650,000 steps so I was not able to obtain the optimal weights. But if you ran this alrogithm on a computer with more RAM, it will be able to converge.
 
 ## Demo
 Here is an animation of the network playing towards the start of the training process:
@@ -59,7 +59,7 @@ Here is an example of the network playing Atari Breakout:
 <img src="example.gif">
 </p>
 
-This is my favorite animation. It shows how big of an impact the discount factor has on the algorithm. As you can see, the agent aims to get the ball stuck on top of the blocks. It blows my mind that using this algorithm, the agent actually became smart!
+This animation shows the impact of having a high discount factor (discounts the future very little) has on the algorithm. As you can see, the agent aims to get the ball stuck on top of the blocks. It blows my mind that the agent is able to learn cool loopholes like this to maxamize the return.
 <p allign="center">
 <img src="smart_breakout.gif">
 </p>
@@ -82,3 +82,4 @@ Then, run the main.py file by entering the command, `python main.py` into the te
 
 ## References
 - [OpenMind Paper - "Human-level control through deep reinforcement learning"](http://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf)
+- [MIT Deep Reinforcement Learning Lecture](https://www.youtube.com/watch?v=QDzM8r3WgBw&t=2262s&ab_channel=LexFridman)

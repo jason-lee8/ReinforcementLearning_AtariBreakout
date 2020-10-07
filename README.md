@@ -42,9 +42,9 @@ Hyperparameters:
 
 We care about the next state because we want to maxamize the total reward. The agent will rather choose an action with a low immediate reward but high long-term reward than an action with a high immediate reward but has a low long-term reward. This is credited due to the hyperparamter, known as the discount factor, **γ**. Gamma is the amount by which the algorithm discounts future rewards, so if you seek high immediate rewards, you would set gamma to be a small number. Vice versa. 
 
-The actual network learns this new Q-value by subtracting the old prediction by the new prediction and squaring it. In other words, DQNs typically use MSE (mean-squared error) loss functions. After the loss is computed, the network performs gradient descent which adjusts weights/biases based on the derivatives of the activation functions to determine how much each weight/bias was at fault. 
+The actual network learns this new Q-value by subtracting the old prediction by the new prediction and squaring it. In other words, DQNs typically use MSE (mean-squared error) loss functions. After the loss is computed, the network performs back propagation which is a process that uses derivatives of the activation functions to adjust the weights/biases. Professor Andrew Ng made a great video explaining how this process works by using computation graphs. See references below.
 
-After many, many steps, the agent will be learn to maxamize the reward by abusing the law of large numbers. This is because as experience in the memory increases, any stochastisity in the envrionment will become apparent. Thus, the agent will learn the state-transition probabilities (if I take action, a, in state, s, what is the probability it will land me in state, s'). 
+After many, many steps, the agent will be learn to maxamize the reward by abusing the law of large numbers. This is because as experience in the memory increases, any stochastisity in the envrionment will become apparent to the agent. Thus, the agent will learn the state-transition probabilities (if I take action, a, in state, s, what is the probability it will land me in state, s'), and will be able to use them to solve/beat the environment.
 
 Sadly, my computer kept crashing at around 650,000 steps so I was not able to obtain the optimal weights. But if you ran this alrogithm on a computer with more RAM, it will be able to converge.
 
@@ -83,3 +83,5 @@ Then, run the main.py file by entering the command, `python main.py` into the te
 ## References
 - [OpenMind Paper - "Human-level control through deep reinforcement learning"](http://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf)
 - [MIT Deep Reinforcement Learning Lecture](https://www.youtube.com/watch?v=QDzM8r3WgBw&t=2262s&ab_channel=LexFridman)
+- [Andrew Ng - Computational Graphs](https://www.youtube.com/watch?v=nJyUyKN-XBQ&ab_channel=Deeplearning.ai)
+- [Sutton/Barto Reinforcement Learning Textbook](http://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)

@@ -54,9 +54,16 @@ Here is an animation of the network playing towards the start of the training pr
 <img src="PreTrainingExample.gif">
 </p>
 
-This animation shows the impact of having a high discount factor (discounts the future very little) has on the algorithm. As you can see, the agent aims to get the ball stuck on top of the blocks. It blows my mind that the agent is able to learn cool loopholes like this to maxamize the return.
+This is the network's performance towards the end of the training process. As you can see, it has learned that keeping the ball above the paddle will maxamize the return.
+<p align="center"> 
+<img src="Decent.gif">
+</p>
+
+This animation shows the network at the end of the training. It also shows the impact of having a high discount factor (discounts the future very little) has on the algorithm. As you can see, the agent aims to break the blocks on the left so it can get the ball on top of the blocks. I find it fascinating that the agent found a cool loophole like this to maxamize the return.
 <p allign="center">
+    
 <img src="Exploitation.gif">
+
 </p>
 
 ## Requirements to run

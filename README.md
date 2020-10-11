@@ -51,7 +51,7 @@ Sadly, my computer kept crashing at around 650,000 steps so I was not able to ob
 ## Demo
 Here is an animation of the network playing towards the start of the training process:
 <p align="center"> 
-<img src="pre_training.gif">
+<img src="PreTrainingExample.gif">
 </p>
 
 Here is an example of the network playing Atari Breakout:

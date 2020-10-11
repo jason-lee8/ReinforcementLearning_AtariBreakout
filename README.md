@@ -50,7 +50,7 @@ Sadly, my computer kept crashing at around 650,000 steps so I was not able to ob
 
 This is the DQN algorithm in Pseudocode:
 <p align="center"?
-<img src="DQN_Algorithm.png">
+![Algorithm]("DQN_Algorithm.png")
 </p>
 
 ## Demo

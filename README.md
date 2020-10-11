@@ -66,6 +66,9 @@ This animation shows the network at the end of the training. It also shows the i
 
 </p>
 
+<p>
+    </p>
+
 ## Requirements to run
 Install these python libraries before running.
 - gym

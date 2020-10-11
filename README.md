@@ -50,24 +50,21 @@ Sadly, my computer kept crashing at around 650,000 steps so I was not able to ob
 
 ## Demo
 Here is an animation of the network playing towards the start of the training process:
+
 <p align="center"> 
 <img src="PreTrainingExample.gif">
 </p>
 
 This is the network's performance towards the end of the training process. As you can see, it has learned that keeping the ball above the paddle will maxamize the return.
+
 <p align="center"> 
 <img src="Decent.gif">
 </p>
 
 This animation shows the network at the end of the training. It also shows the impact of having a high discount factor (discounts the future very little) has on the algorithm. As you can see, the agent aims to break the blocks on the left so it can get the ball on top of the blocks. I find it fascinating that the agent found a cool loophole like this to maxamize the return.
+
 <p allign="center">
-    
 <img src="Exploitation.gif">
-
-</p>
-
-<p>
-.
 </p>
 
 ## Requirements to run

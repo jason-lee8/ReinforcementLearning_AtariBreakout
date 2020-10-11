@@ -85,3 +85,5 @@ Then, run the main.py file by entering the command, `python main.py` into the te
 - [MIT Deep Reinforcement Learning Lecture](https://www.youtube.com/watch?v=QDzM8r3WgBw&t=2262s&ab_channel=LexFridman)
 - [Andrew Ng - Computational Graphs](https://www.youtube.com/watch?v=nJyUyKN-XBQ&ab_channel=Deeplearning.ai)
 - [Sutton/Barto Reinforcement Learning Textbook](http://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)
+- [Lecture 16 - Independent Component Analysis & RL | Stanford CS229: Machine Learning (Autumn 2018)](youtube.com/watch?v=YQA9lLdLig8&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU&index=16&ab_channel=stanfordonline)
+- [Lecture 17 - MDPs & Value/Policy Iteration | Stanford CS229: Machine Learning (Autumn 2018)](https://www.youtube.com/watch?v=d5gaWTo6kDM&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU&index=17&ab_channel=stanfordonline)

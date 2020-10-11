@@ -54,14 +54,9 @@ Here is an animation of the network playing towards the start of the training pr
 <img src="PreTrainingExample.gif">
 </p>
 
-Here is an example of the network playing Atari Breakout:
-<p align="center"> 
-<img src="example.gif">
-</p>
-
 This animation shows the impact of having a high discount factor (discounts the future very little) has on the algorithm. As you can see, the agent aims to get the ball stuck on top of the blocks. It blows my mind that the agent is able to learn cool loopholes like this to maxamize the return.
 <p allign="center">
-<img src="smart_breakout.gif">
+<img src="Exploitation.gif">
 </p>
 
 ## Requirements to run

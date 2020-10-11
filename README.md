@@ -48,6 +48,11 @@ After many, many steps, the agent will be learn to maxamize the reward by abusin
 
 Sadly, my computer kept crashing at around 650,000 steps so I was not able to obtain the optimal weights. But if you ran this alrogithm on a computer with more RAM, it will be able to converge.
 
+This is the DQN algorithm in Pseudocode:
+<p align="center"?
+<img src="DQN_Algorithm.png">
+</p>
+
 ## Demo
 Here is an animation of the network playing towards the start of the training process:
 

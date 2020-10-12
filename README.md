@@ -4,6 +4,13 @@ I used Keras to implement a Deep-Q-Network that can play Atari Breakout at an ab
 # How it Works
 The network learns to play video games by using Q-learning, which is a model-free reinforcement learning algorithm. In other words, it uses an algorithm that basically uses trial and error to learn an action-selection policy that will maxamize the expected value of the total reward (also known as the return). 
 
+The Q-value of a (state, action) pair is determined using the Bellman equation:
+<img src="https://miro.medium.com/max/2400/1*Re6kADukp4wKFEnGzhImzw.png">
+
+Basically, to find the Q-value of a state-action pair, (s, a), take the sum of all possible next states and rewards, find the state-action transition probabilities for each possible action, then multiplying it by the immediate reward for taking that action plus the future Q-value of the next state, given that you take the action that maxamizes its Q-value. A state-action transition probability is the probability of landing in state, s', and recieving reward, r, given that I started in state, s, and took action, a.
+
+(Fun fact: The Q in Q-value stands for quality)
+
 The way Q-learning works is that the agent has a variable, **ε** (epsilon), that represents the ratio of exploration to exploitation. Exploring means taking a random action while exploiting means taking the action that will maxamize the Q-value of that state. Over time, ε decays to the hyperparameter, minimum ε. 
 
 ```python
@@ -30,7 +37,7 @@ In my program, they are the following variables: `state`, `action`, `reward`, `d
 
 `done` is a boolean that is True if the action taken resulted in losing the game (which means that `state` is a terminal state). Otherwise, `done` is False, meaning the agent could still continue playing. 
 
-**Experience replay** is is a temporal difference learning method that uses the previous states, actions, rewards, and next states stored in the memory to learn to maxamize a Q-function. It does this using this equation here:
+**Experience replay** is is a temporal difference learning method that uses the previous states, actions, rewards, and next states stored in the memory to learn to maxamize a Q-function. The program learns the real Q-values of every state-action pair by using this function:
 
 <img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/678cb558a9d59c33ef4810c9618baf34a9577686">
 
@@ -40,11 +47,11 @@ Hyperparameters:
 - **α (alpha)** - Learning rate
 - **γ (gamma)** - Discount factor
 
-We care about the next state because we want to maxamize the total reward. The agent will rather choose an action with a low immediate reward but high long-term reward than an action with a high immediate reward but has a low long-term reward. This is credited due to the hyperparamter, known as the discount factor, **γ**. Gamma is the amount by which the algorithm discounts future rewards, so if you seek high immediate rewards, you would set gamma to be a small number. Vice versa. 
+The next state is important because the goal is to maxamize the total reward, or the return. The agent will learn to choose an action with a low immediate reward but high long-term reward than an action with a high immediate reward but has a low long-term reward. The hyperparamter, known as the discount factor, **γ** is what makes this possible. Gamma is the amount the algorithm discounts future rewards. If you seek high immediate rewards, you would set gamma to be a small number. Vice versa. 
 
-The actual network learns this new Q-value by subtracting the old prediction by the new prediction and squaring it. In other words, DQNs typically use MSE (mean-squared error) loss functions. After the loss is computed, the network performs back propagation which is a process that uses derivatives of the activation functions to adjust the weights/biases. Professor Andrew Ng made a great video explaining how this process works by using computation graphs. See references below.
+The network learns new Q-values by subtracting its prediction by the actual value and squaring it. In other words, DQNs typically use MSE (mean-squared error) loss functions. After the loss is computed, the network performs back propagation which is a process that uses derivatives of the activation functions to adjust the weights/biases. Then, each weight/bias is subtracted by the learning rate, **α**, multiplied by the error that single activation node had in computing the predicted value. This process is very complicated, but Professor Andrew Ng has an excellent Coursera course explaining how this learning process works.
 
-After many, many steps, the agent will be learn to maxamize the reward by abusing the law of large numbers. This is because as experience in the memory increases, any stochastisity in the envrionment will become apparent to the agent. Thus, the agent will learn the state-transition probabilities (if I take action, a, in state, s, what is the probability it will land me in state, s'), and will be able to use them to solve/beat the environment.
+After many, many steps, the agent will be learn to maxamize the reward through the law of large numbers. This is because as experience in the memory increases, any stochastisity in the envrionment will become apparent to the agent. Thus, the agent will learn the state-transition probabilities, and will be able to use them to solve/beat the environment.
 
 Sadly, my computer kept crashing at around 650,000 steps so I was not able to obtain the optimal weights. But if you ran this alrogithm on a computer with more RAM, it will be able to converge.
 

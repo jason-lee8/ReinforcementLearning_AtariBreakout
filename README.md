@@ -1,7 +1,7 @@
 # Deep-Q-Network--Breakout
 I used Keras to implement a Deep-Q-Network that can play Atari Breakout at an above human-level performance.
 
-## How it Works
+# How it Works
 The network learns to play video games by using Q-learning, which is a model-free reinforcement learning algorithm. In other words, it uses an algorithm that basically uses trial and error to learn an action-selection policy that will maxamize the expected value of the total reward (also known as the return). 
 
 The way Q-learning works is that the agent has a variable, **ε** (epsilon), that represents the ratio of exploration to exploitation. Exploring means taking a random action while exploiting means taking the action that will maxamize the Q-value of that state. Over time, ε decays to the hyperparameter, minimum ε. 
@@ -52,7 +52,8 @@ This is the DQN algorithm in Pseudocode:
 
 ![Algorithm](DQN_Algorithm.png)
 
-## Demo
+<br>
+# Demo
 Here is an animation of the network playing towards the start of the training process:
 
 <p align="center"> 
@@ -71,7 +72,7 @@ This animation shows the network at the end of the training. It also shows the i
 <img src="Exploitation.gif">
 </p>
 
-## Requirements to run
+# Requirements to run
 Install these python libraries before running.
 - gym
 - gym[atari]
@@ -82,12 +83,12 @@ Install these python libraries before running.
 - pickle (optional)
 
 
-## How to use
+# How to use
 Use the argument.py file to modify the arguments to your liking.
 
 Then, run the main.py file by entering the command, `python main.py` into the terminal.
 
-## References
+# References
 - [OpenMind Paper - "Human-level control through deep reinforcement learning"](http://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf)
 - [MIT Deep Reinforcement Learning Lecture](https://www.youtube.com/watch?v=QDzM8r3WgBw&t=2262s&ab_channel=LexFridman)
 - [Andrew Ng - Computational Graphs](https://www.youtube.com/watch?v=nJyUyKN-XBQ&ab_channel=Deeplearning.ai)

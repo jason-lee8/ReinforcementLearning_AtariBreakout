@@ -53,6 +53,7 @@ This is the DQN algorithm in Pseudocode:
 ![Algorithm](DQN_Algorithm.png)
 
 <br>
+
 # Demo
 Here is an animation of the network playing towards the start of the training process:
 

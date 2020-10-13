@@ -1,12 +1,10 @@
 # Deep-Q-Network--Breakout
 
-I used Keras to implement a Deep-Q-Network that can play Atari Breakout at an above human-level performance.
-
-
+Keras implementation of a Deep-Q-Network that can play Atari Breakout at a performance above human-level.
 
 # How it Works
 
-The network learns to play video games by using Q-learning, which is a model-free reinforcement learning algorithm. In other words, it uses an algorithm that basically uses trial and error to learn an action-selection policy that will maximize the expected value of the total reward (also known as the return). 
+The network learns to play video games by using Q-learning, which is a model-free reinforcement learning algorithm. In other words, it uses an algorithm that uses trial and error to learn an action-selection policy that will maximize the expected value of the total reward (also known as the return). 
 
 
 
@@ -96,115 +94,63 @@ Hyperparameters:
 
 
 
-The next state is important because the goal is to maximize the total reward, or the return. The agent will learn to choose an action with a low immediate reward but a high long-term reward than an action with a high immediate reward but has a low long-term reward. The hyperparameter, known as the discount factor, **γ** is what makes this possible. Gamma is the amount the algorithm discounts future rewards. If you seek high immediate rewards, you would set gamma to be a small number. Vice versa. 
-
-
+The next states and future rewards are super important because the agent's goal is to maximize the return (sum of all rewards). The agent will learn to choose an action with a low immediate reward but high long-term reward than an action with a high immediate reward and a low long-term reward. The hyperparameter, known as the discount factor, **γ** is what makes this possible. Gamma is the amount the algorithm discounts future rewards. If you seek high immediate rewards, you would set gamma to be a small number. Vice versa.
 
 The network learns new Q-values by subtracting its prediction by the actual value and squaring it. In other words, DQNs typically use MSE (mean-squared error) loss functions. After the loss is computed, the network performs backpropagation which is a process that uses derivatives of the activation functions to adjust the weights/biases. Then, each weight/bias is subtracted by the learning rate, **α**, multiplied by the error of that single activation node had in computing the predicted value. This process is very complicated, but Professor Andrew Ng has an excellent Coursera course explaining how this learning process works.
 
-
-
 After many, many steps, the agent will learn to maximize the reward through the law of large numbers. This is because as experience in the memory increases, any stochasticity in the environment will become apparent to the agent. Thus, the agent will learn the state-transition probabilities and will be able to use them to solve/beat the environment.
-
-
 
 Sadly, my computer kept crashing at around 650,000 steps so I was not able to obtain the optimal weights. But if you run this algorithm on a computer with more RAM, it will be able to converge.
 
-
-
 This is the DQN algorithm in Pseudocode:
-
-
 
 ![Algorithm](DQN_Algorithm.png)
 
-
-
 <br>
-
-
 
 # Demo
 
 Here is an animation of the network playing towards the start of the training process:
 
-
-
 <p align="center"> 
-
 <img src="PreTrainingExample.gif">
-
 </p>
-
-
 
 This is the network's performance towards the end of the training process. As you can see, it has learned that keeping the ball above the paddle will maxamize the return.
 
-
-
 <p align="center"> 
-
 <img src="Decent.gif">
-
 </p>
-
-
 
 This animation shows the network at the end of the training. It also shows the impact of having a high discount factor (discounts the future very little) has on the algorithm. As you can see, the agent aims to break the blocks on the left so it can get the ball on top of the blocks. I find it fascinating that the agent found a cool loophole like this to maximize the return.
 
-
-
 <p allign="center">
-
 <img src="Exploitation.gif">
-
 </p>
-
-
 
 # Requirements to run
 
 Install these python libraries before running.
 
 - gym
-
 - gym[atari]
-
 - tensorflow
-
 - keras
-
 - h5py
-
 - numpy
-
 - pickle (optional)
-
-
-
-
 
 # How to use
 
 Use the argument.py file to modify the arguments to your liking.
 
-
-
 Then, run the main.py file by entering the command, `python main.py` into the terminal.
-
-
 
 # References
 
 - [OpenMind Paper - "Human-level control through deep reinforcement learning"](http://web.stanford.edu/class/psych209/Readings/MnihEtAlHassibis15NatureControlDeepRL.pdf)
-
 - [MIT Deep Reinforcement Learning Lecture](https://www.youtube.com/watch?v=QDzM8r3WgBw&t=2262s&ab_channel=LexFridman)
-
 - [Andrew Ng - Computational Graphs](https://www.youtube.com/watch?v=nJyUyKN-XBQ&ab_channel=Deeplearning.ai)
-
 - [Sutton/Barto Reinforcement Learning Textbook](http://web.stanford.edu/class/psych209/Readings/SuttonBartoIPRLBook2ndEd.pdf)
-
 - [Lecture 16 - Independent Component Analysis & RL | Stanford CS229: Machine Learning (Autumn 2018)](youtube.com/watch?v=YQA9lLdLig8&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU&index=16&ab_channel=stanfordonline)
-
 - [Lecture 17 - MDPs & Value/Policy Iteration | Stanford CS229: Machine Learning (Autumn 2018)](https://www.youtube.com/watch?v=d5gaWTo6kDM&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU&index=17&ab_channel=stanfordonline)
-

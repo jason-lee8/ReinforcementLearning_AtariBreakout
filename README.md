@@ -79,7 +79,7 @@ This is the network's performance towards the end of the training process. As yo
 <img src="Decent.gif">
 </p>
 
-This animation shows the network at the end of the training. It also shows the impact of having a high discount factor (discounts the future very little) has on the algorithm. As you can see, the agent aims to break the blocks on the left so it can get the ball on top of the blocks. I find it fascinating that the agent found a cool loophole like this to maximize the return.
+This animation shows the network at the end of the training. It also shows the impact of having a high discount factor (discounts the future very little) has on the algorithm. As you can see, the agent aims to break the blocks on the left so it can get the ball stuck on top of the blocks. It's fascinating that the agent was able to learn its own creative way of maxamizing the return!
 
 <p allign="center">
 <img src="Exploitation.gif">
